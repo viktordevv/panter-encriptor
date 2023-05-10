@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+      rel="stylesheet"
+    />
+    <title>Magic Encriptor</title>
+  </head>
+  <body>
+    <header>
+      <h1>Magic Encriptor</h1>
+    </header>
+
+    <div class="container" id="box">
+      <textarea
+        name="palabrainput"
+        id="palabrainput"
+        cols="30"
+        rows="10"
+        placeholder="Encripta aqui!"
+      ></textarea>
+      <div class="button">
+        <img src="detective.png" alt="">
+        <button
+          onclick="encriptar(document.getElementById('palabrainput').value)"
+        >
+          Encriptar
+        </button>
+        <button
+          onclick="desencriptar(document.getElementById('palabrainput').value)"
+        >
+          Desencriptar
+        </button>
+        <!-- <button onclick="copiarResultado()">Copiar</button> -->
+      </div>
+      <textarea
+        name="resultado"
+        id="resultadotextarea"
+        cols="30"
+        rows="10"
+        placeholder="Tu texto encriptado!"
+      ></textarea>
+    </div>
+
+
+    <footer>
+        <p>Created by <a href="https://github.com/viktordevv">Viktor Dev</a></p>
+      </footer>
+      <img src="fondo.png" class="personaje-img">
+    <script>
+      function encriptar(palabrainput) {
+        let palabra = palabrainput;
+        let resultado = "";
+        for (let i = 0; i < palabra.length; i++) {
+          switch (palabra[i]) {
+            case "e":
+              resultado += "enter";
+              break;
+            case "i":
+              resultado += "imes";
+              break;
+            case "a":
+              resultado += "ai";
+              break;
+            case "o":
+              resultado += "ober";
+              break;
+            case "u":
+              resultado += "ufat";
+              break;
+            default:
+              resultado += palabra[i];
+          }
+        }
+        document.getElementById("resultadotextarea").value = resultado;
+      }
+
+      function desencriptar(palabraEncriptada) {
+        let resultado = "";
+        let i = 0;
+        while (i < palabraEncriptada.length) {
+          let palabraDesencriptada = "";
+          let j = i;
+          while (j < palabraEncriptada.length) {
+            let substr = palabraEncriptada.slice(i, j + 1);
+            switch (substr) {
+              case "enter":
+                palabraDesencriptada += "e";
+                i = j + 1;
+                break;
+              case "imes":
+                palabraDesencriptada += "i";
+                i = j + 1;
+                break;
+              case "ai":
+                palabraDesencriptada += "a";
+                i = j + 1;
+                break;
+              case "ober":
+                palabraDesencriptada += "o";
+                i = j + 1;
+                break;
+              case "ufat":
+                palabraDesencriptada += "u";
+                i = j + 1;
+                break;
+            }
+            j++;
+          }
+          if (palabraDesencriptada === "") {
+            resultado += palabraEncriptada[i];
+            i++;
+          } else {
+            resultado += palabraDesencriptada;
+          }
+        }
+        document.getElementById("resultadotextarea").value = resultado;
+
+        function copiarResultado() {
+          const textarea = document.getElementById("resultadotextarea");
+          textarea.select();
+          document.execCommand("copy");
+        }
+      }
+    </script>
+  </body>
+</html>
