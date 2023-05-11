@@ -1,5 +1,6 @@
 * {
   font-family: "Alata", sans-serif;
+  margin: 0%;
 }
 
 body {
@@ -10,62 +11,65 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
 }
 
 textarea {
   opacity: 0.7;
   border-radius: 10px;
   border: none;
-  padding: 10px;
   margin: 10px;
 }
 
 button {
   border-radius: 20px;
   border: none;
-  padding: 15px;
-  margin: 15px;
+  padding: 5%;
+  margin: 10px;
   background-color: #591e29;
   color: white;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   position: relative;
   z-index: 1;
   border-radius: 4%;
   flex-direction: column;
-  background-color: #591e29;
 }
 
 button:hover {
   background-color: #bf3952;
 }
 
-#palabrainput {
-  height: 300px;
-}
-
+#palabrainput,
 #resultadotextarea {
-  height: 300px;
+  height: 350px;
+  width: 300px;
 }
 
 footer {
-  position: relative;
+  font-family: 'Miltonian';
+  color: white;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 2.5rem;
-  background-color: #591e29;
+
 }
 
 .personaje-img {
   position: absolute;
   bottom: 0px;
   right: 0;
-  width: 170px; /* ajustar según tus necesidades */
-  height: 200px; /* ajustar según tus necesidades */
+  width: 10%; /* ajustar según tus necesidades */
+  height: auto; /* ajustar según tus necesidades */
 }
+
+.detective {
+  width: 50%; /* ajustar según tus necesidades */
+  height: 50%; /* ajustar según tus necesidades */
+}
+

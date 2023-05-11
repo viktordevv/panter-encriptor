@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,9 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Miltonian&display=swap" rel="stylesheet">
     <title>Magic Encriptor</title>
   </head>
   <body>
+    <div class="circle"></div>
     <header>
       <h1>Magic Encriptor</h1>
     </header>
@@ -27,7 +31,7 @@
         placeholder="Encripta aqui!"
       ></textarea>
       <div class="button">
-        <img src="detective.png" alt="">
+        <img src="detective.png" class="detective" />
         <button
           onclick="encriptar(document.getElementById('palabrainput').value)"
         >
@@ -51,9 +55,11 @@
 
 
     <footer>
-        <p>Created by <a href="https://github.com/viktordevv">Viktor Dev</a></p>
-      </footer>
-      <img src="fondo.png" class="personaje-img">
+      <h1 style="font-family: 'Miltonian';">60 years</h1>
+      <br>
+      <h2 style="font-family: 'Miltonian';">Pink Panter</h2>
+    </footer>
+    <img src="fondo.png" class="personaje-img" />
     <script>
       function encriptar(palabrainput) {
         let palabra = palabrainput;
