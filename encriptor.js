@@ -1,56 +1,74 @@
-function encriptar(palabra) {
-    let resultado = "";
-    for (let i = 0; i < palabra.length; i++) {
-      switch (palabra[i]) {
-        case "e":
-          resultado += "enter";
-          break;
-        case "i":
-          resultado += "imes";
-          break;
-        case "a":
-          resultado += "ai";
-          break;
-        case "o":
-          resultado += "ober";
-          break;
-        case "u":
-          resultado += "ufat";
-          break;
-        default:
-          resultado += palabra[i];
-      }
+function encriptar(palabrainput) {
+  let palabra = palabrainput;
+  let resultado = "";
+  for (let i = 0; i < palabra.length; i++) {
+    switch (palabra[i]) {
+      case "e":
+        resultado += "enter";
+        break;
+      case "i":
+        resultado += "imes";
+        break;
+      case "a":
+        resultado += "ai";
+        break;
+      case "o":
+        resultado += "ober";
+        break;
+      case "u":
+        resultado += "ufat";
+        break;
+      default:
+        resultado += palabra[i];
     }
-    document.getElementById("resultado-textarea").value = resultado;
   }
-  
-  function desencriptar(palabraEncriptada) {
-    let resultado = "";
-    for (let i = 0; i < palabraEncriptada.length; i++) {
-      switch (palabraEncriptada.slice(i, i + 5)) {
+  document.getElementById("resultadotextarea").value = resultado;
+}
+
+function desencriptar(palabraEncriptada) {
+  let resultado = "";
+  let i = 0;
+  while (i < palabraEncriptada.length) {
+    let palabraDesencriptada = "";
+    let j = i;
+    while (j < palabraEncriptada.length) {
+      let substr = palabraEncriptada.slice(i, j + 1);
+      switch (substr) {
         case "enter":
-          resultado += "e";
-          i += 4;
+          palabraDesencriptada += "e";
+          i = j + 1;
           break;
         case "imes":
-          resultado += "i";
-          i += 3;
+          palabraDesencriptada += "i";
+          i = j + 1;
           break;
         case "ai":
-          resultado += "a";
-          i += 1;
+          palabraDesencriptada += "a";
+          i = j + 1;
           break;
         case "ober":
-          resultado += "o";
-          i += 3;
+          palabraDesencriptada += "o";
+          i = j + 1;
           break;
         case "ufat":
-          resultado += "u";
-          i += 3;
+          palabraDesencriptada += "u";
+          i = j + 1;
           break;
-        default:
-          resultado += palabraEncriptada[i];
       }
+      j++;
     }
-    document.getElementById("resultado-textarea").value = resultado;
+    if (palabraDesencriptada === "") {
+      resultado += palabraEncriptada[i];
+      i++;
+    } else {
+      resultado += palabraDesencriptada;
+    }
   }
+  document.getElementById("resultadotextarea").value = resultado;
+
+  function copiarResultado() {
+    const textarea = document.getElementById("resultadotextarea");
+    textarea.select();
+    document.execCommand("copy");
+  }
+}

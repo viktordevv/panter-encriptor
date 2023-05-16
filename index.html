@@ -11,15 +11,19 @@
       href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alata&family=Miltonian&display=swap" rel="stylesheet">
-    <title>Magic Encriptor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Miltonian&display=swap"
+      rel="stylesheet"
+    />
+    <title>Panter Encriptor</title>
   </head>
   <body>
-    <div class="circle"></div>
     <header>
-      <h1>Magic Encriptor</h1>
+      <h1 style="font-family: 'Miltonian'; text-align: center">
+        Panter Encriptor
+      </h1>
     </header>
 
     <div class="container" id="box">
@@ -53,88 +57,19 @@
       ></textarea>
     </div>
 
+    
 
     <footer>
-      <h1 style="font-family: 'Miltonian';">60 years</h1>
-      <br>
-      <h2 style="font-family: 'Miltonian';">Pink Panter</h2>
+      <h2 style="font-family: 'Miltonian'">60 years</h2>
+      <br />
+      <h2 style="font-family: 'Miltonian'">Pink Panter</h2>
+      <p style="text-align: center">
+        &copy; 2023 Created by
+        <a href="https://github.com/viktordevv">Viktor Dev</a>
+      </p>
     </footer>
+
     <img src="fondo.png" class="personaje-img" />
-    <script>
-      function encriptar(palabrainput) {
-        let palabra = palabrainput;
-        let resultado = "";
-        for (let i = 0; i < palabra.length; i++) {
-          switch (palabra[i]) {
-            case "e":
-              resultado += "enter";
-              break;
-            case "i":
-              resultado += "imes";
-              break;
-            case "a":
-              resultado += "ai";
-              break;
-            case "o":
-              resultado += "ober";
-              break;
-            case "u":
-              resultado += "ufat";
-              break;
-            default:
-              resultado += palabra[i];
-          }
-        }
-        document.getElementById("resultadotextarea").value = resultado;
-      }
-
-      function desencriptar(palabraEncriptada) {
-        let resultado = "";
-        let i = 0;
-        while (i < palabraEncriptada.length) {
-          let palabraDesencriptada = "";
-          let j = i;
-          while (j < palabraEncriptada.length) {
-            let substr = palabraEncriptada.slice(i, j + 1);
-            switch (substr) {
-              case "enter":
-                palabraDesencriptada += "e";
-                i = j + 1;
-                break;
-              case "imes":
-                palabraDesencriptada += "i";
-                i = j + 1;
-                break;
-              case "ai":
-                palabraDesencriptada += "a";
-                i = j + 1;
-                break;
-              case "ober":
-                palabraDesencriptada += "o";
-                i = j + 1;
-                break;
-              case "ufat":
-                palabraDesencriptada += "u";
-                i = j + 1;
-                break;
-            }
-            j++;
-          }
-          if (palabraDesencriptada === "") {
-            resultado += palabraEncriptada[i];
-            i++;
-          } else {
-            resultado += palabraDesencriptada;
-          }
-        }
-        document.getElementById("resultadotextarea").value = resultado;
-
-        function copiarResultado() {
-          const textarea = document.getElementById("resultadotextarea");
-          textarea.select();
-          document.execCommand("copy");
-        }
-      }
-    </script>
+    <script src="encriptor.js"></script>
   </body>
 </html>

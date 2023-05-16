@@ -7,6 +7,12 @@ body {
   background-color: #a6535a;
 }
 
+header {
+  padding: 10px;
+  border-radius: 2%;
+  color: aliceblue;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -72,4 +78,5 @@ footer {
   width: 50%; /* ajustar según tus necesidades */
   height: 50%; /* ajustar según tus necesidades */
 }
+
 
