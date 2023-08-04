@@ -5,6 +5,7 @@
 
 body {
   background-color: #a6535a;
+  
 }
 
 header {
@@ -28,13 +29,14 @@ textarea {
 }
 
 button {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   border: none;
   padding: 5%;
   margin: 10px;
   background-color: #591e29;
   color: white;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .button {
@@ -55,6 +57,7 @@ button:hover {
 #resultadotextarea {
   height: 350px;
   width: 300px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 footer {
@@ -63,7 +66,8 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-
+  margin-bottom: 20px;
+  margin-left: 5px;
 }
 
 .personaje-img {
@@ -77,6 +81,8 @@ footer {
 .detective {
   width: 50%; /* ajustar según tus necesidades */
   height: 50%; /* ajustar según tus necesidades */
+
 }
+
 
 
